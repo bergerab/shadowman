@@ -15,10 +15,14 @@ const gameLoop = g => {
  */
 const initializeGame = () => {
   const screen = document.getElementById('screen');
+  const ctx = screen.getContext('2d');
+  ctx.webkitImageSmoothingEnabled = false;
+  ctx.mozImageSmoothingEnabled = false;
+  ctx.imageSmoothingEnabled = false;
   const g = {
     t: new Date().getTime() / 1000,
     screen: screen,
-    ctx: screen.getContext('2d'),
+    ctx: ctx,
     screenWidth: screen.width,
     screenHeight: screen.height,
     objects: {},
