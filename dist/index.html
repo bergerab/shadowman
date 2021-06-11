@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="google" content="notranslate">
+        <title>Shadowman</title>
+    </head>
+    <body>
+        <script src="sme.js"></script>
+        <script>
+	 new SME.App()
+		.setDefaultImageDirectory('img/')
+		.setDefaultImageFiletype('.png')
+		.setAntiAliasing(false)
+		.addKeyframes({ url: 'sm/up',    width: 30, height: 35, frameCount: 6, scale: 4, })
+		.addKeyframes({ url: 'sm/down',  width: 30, height: 35, frameCount: 6, scale: 4, })
+		.addKeyframes({ url: 'sm/left',  width: 30, height: 35, frameCount: 6, scale: 4, })
+		.addKeyframes({ url: 'sm/right', width: 30, height: 35, frameCount: 6, scale: 4, })
+		.addKeyframes({ url: 'sm/idle-right', width: 30, height: 35, frameCount: 4, scale: 4})
+		.addKeyframes({ url: 'sm/idle-up', width: 30, height: 35, frameCount: 4, scale: 4})
+		.addKeyframes({ url: 'sm/idle-down', width: 30, height: 35, frameCount: 4, scale: 4})
+		.addKeyframes({ url: 'sm/idle-left', width: 30, height: 35, frameCount: 4, scale: 4})	 	 
+		.initialize(document.body).then(app => {
+		    app.addObject(new SME.Character(app, {
+			up:    'sm/up',
+			down:  'sm/down',
+			left:  'sm/left',
+			right: 'sm/right',
+			x: 0,
+			y: 0,
+		    }));
+		});
+        </script>
+    </body>
+</html>
